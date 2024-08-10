@@ -1,20 +1,50 @@
-//Encapsulation in Java refers to integrating data (variables) and code (methods) into a single unit.
-class myclass{
-    private String name;
+class Main{
+	private String name;
+	private int id;
+	
+	public Main(String name, int id){
+		this.name = name;
+		this.id = id;
+	}
+	
+	//Accessing private variable
+	public void display(){
+		System.out.println(name);
+		System.out.println(id);
+	}
 
-    public String getName(){
-        return name;
-    }
+	//getter setter for Name
+	public void setName(String name){
+		this.name = name;
+	}
+	public String getName(){
+		return name;
+	}
 
-    public void setName(String name2){
-        name = name2;
-    }
+	//getter setter for Id
+	public void setId(int id){
+		this.id = id;
+	}
+	public int getId(){
+		return id;
+	}
 }
-class encapsulation{
-    public static void main(String args []){
-        System.out.println("Java");
-        myclass M = new myclass();
-        M.setName("Rushikesh");
-        System.out.println(M.getName());
-    }
-}
+
+public class Encapsulation{
+	public static void main(String [] args){
+		Main e = new Main("Rushikesh", 100);
+		
+		//System.out.println(e.name); //we can't access because of private
+		e.display();
+
+		e.setName("Rohan");
+		System.out.println(e.getName());
+		e.setId(200);
+		System.out.println(e.getId());
+
+		e.setName("Tushar");
+		System.out.println(e.getName());
+		e.setId(200);
+		System.out.println(e.getId());
+	}
+}	
